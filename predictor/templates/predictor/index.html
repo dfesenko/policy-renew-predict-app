@@ -1,0 +1,50 @@
+
+
+<h1>Insurance policy renew prediction service</h1>
+
+<p>Here you can detect which customers are more likely to renew their policies and which are going to churn.</p>
+
+<p>To start, please, upload the file with data about customers for which you want to run the prediction.</p>
+
+<p>The expected file should be the CSV file with ";" as a separator.
+    Here is the list of features the model needs to make a prediction:</p>
+
+<p>
+    POLICY_ID;POLICY_BEGIN_MONTH;POLICY_END_MONTH;POLICY_SALES_CHANNEL;POLICY_SALES_CHANNEL_GROUP;POLICY_BRANCH;
+    POLICY_MIN_AGE;POLICY_MIN_DRIVING_EXPERIENCE;VEHICLE_MAKE;VEHICLE_MODEL;VEHICLE_ENGINE_POWER;VEHICLE_IN_CREDIT;
+    VEHICLE_SUM_INSURED;POLICY_INTERMEDIARY;INSURER_GENDER;POLICY_CLM_N;POLICY_CLM_GLT_N;POLICY_PRV_CLM_N;
+    POLICY_PRV_CLM_GLT_N;CLIENT_HAS_DAGO;CLIENT_HAS_OSAGO;POLICY_COURT_SIGN;CLAIM_AVG_ACC_ST_PRD;POLICY_HAS_COMPLAINTS;
+    POLICY_YEARS_RENEWED_N;POLICY_DEDUCT_VALUE;CLIENT_REGISTRATION_REGION;POLICY_PRICE_CHANGE
+</p>
+
+<form method="post" action="{% url 'index' %}" enctype="multipart/form-data" target="_blank">
+
+{% csrf_token %}
+
+<table>
+    <tr>
+        <td>{{ upload_file_form.file.label_tag }}</td>
+        <td>{{ upload_file_form.file }}</td>
+    </tr>
+</table>
+
+<p></p>
+
+<div id="loading" style="display: none; color: green" >
+    <div>
+        Please, wait until the prediction will be generated. After success, the file with results should be loaded.
+    </div>
+    <p></p>
+</div>
+
+    <input type="submit" value="Run prediction" onclick="wait_notification()" >
+
+</form>
+
+<script type="text/javascript">
+
+function wait_notification() {
+     document.getElementById('loading').style.display = "block";
+}
+
+</script>
