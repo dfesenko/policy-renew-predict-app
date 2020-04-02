@@ -2,7 +2,7 @@
 
 You can use `docker-compose` to run this application.  
 
-1) Clone: `git clone ` .  
+1) Clone: `git clone https://github.com/dfesenko/policy-renew-predict-app.git` .  
 2) Change directory: `cd policy-renew-predict-app/`.   
 3) Run command: `docker-compose up`.  
 4) Wait until everything will be ready.  
