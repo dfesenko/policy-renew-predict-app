@@ -10,7 +10,7 @@ You can use `docker-compose` to run this application.
 
 Alternatively, you can: 
 1) Create new virtual environment (`python -m venv venv`).  
-2) Use `requirements.txt` file to install dependencies. 
+2) Use `requirements.txt` file to install dependencies: `pip install -r requirements.txt`.  
 3) Run the test server using `python manage.py runserver` command.  
 4) The application should be available here: `http://localhost:8000/`.   
 
